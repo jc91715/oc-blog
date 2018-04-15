@@ -1,0 +1,63 @@
+{
+    "name": "jc91715/oc-blog",
+    "description": "October CMS",
+    "homepage": "http://octobercms-china.cn",
+    "keywords": ["october", "cms", "octobercms", "laravel","jc91715"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jc91715",
+            "email": "370234915@qq.com",
+            "role": "Co-founder"
+        }
+    ],
+    "support": {
+
+    },
+    "require": {
+        "php": ">=7.0",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "october/rain": "~1.0",
+        "october/system": "~1.0",
+        "october/backend": "~1.0",
+        "october/cms": "~1.0",
+        "laravel/framework": "5.5.*",
+        "wikimedia/composer-merge-plugin": "dev-master"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.7",
+        "phpunit/phpunit": "~5.7",
+        "phpunit/phpunit-selenium": "~1.2"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/UiTestCase.php",
+            "tests/PluginTestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-update-cmd": [
+            "php artisan october:util set build"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "plugins/*/*/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": false
+        }
+    }
+}

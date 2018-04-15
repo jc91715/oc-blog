@@ -1,0 +1,31 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+description = "Viewing a single blog post"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[forumEmbedTopic]
+embedCode = "{{ :slug }}"
+channelSlug = "backend"
+memberPage = "forum/member"
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->post->title;
+}
+?>
+==
+{% component 'blogPost' %}
+
+<hr />
+<h4>评论:</h4>
+{% if user %}
+    {% component 'forumEmbedTopic' %}
+{% else %}
+    <p>请登录 <a href="{{ 'account'|page }}">登录</a> 评论!</p>
+{% endif %}
