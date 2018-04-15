@@ -12,9 +12,6 @@
             "role": "Co-founder"
         }
     ],
-    "support": {
-        "source": "https://github.com/octobercms/october"
-    },
     "require": {
         "php": ">=7.0",
         "ext-mbstring": "*",
@@ -46,12 +43,6 @@
             "php artisan october:util set build"
         ]
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/octobercms/october"
-        }
-    ],
     "config": {
         "preferred-install": "dist"
     },
