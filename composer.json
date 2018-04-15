@@ -4,6 +4,7 @@
     "homepage": "http://octobercms-china.cn",
     "keywords": ["october", "cms", "octobercms", "laravel","jc91715"],
     "license": "MIT",
+    "type": "project",
     "authors": [
         {
             "name": "jc91715",
