@@ -45,6 +45,12 @@
             "php artisan october:util set build"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/octobercms/october"
+        }
+    ],
     "config": {
         "preferred-install": "dist"
     },
