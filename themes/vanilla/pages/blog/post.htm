@@ -2,6 +2,7 @@ title = "Blog Post"
 url = "/blog/post/:slug"
 layout = "default"
 description = "Viewing a single blog post"
+meta_description = "我们是高品质的octobercms开发者社区，致力于为 octobercms 和 PHP 开发者提供一个分享创造、结识伙伴、协同互助的论坛。"
 is_hidden = 0
 
 [blogPost]
@@ -10,7 +11,7 @@ categoryPage = "blog/category"
 
 [forumEmbedTopic]
 embedCode = "{{ :slug }}"
-channelSlug = "backend"
+channelSlug = "banckend"
 memberPage = "forum/member"
 ==
 <?php
@@ -20,7 +21,11 @@ function onEnd()
 }
 ?>
 ==
+<div id="content123">
+<h1>{{ this.page.title }}</h1>
 {% component 'blogPost' %}
+</div>
+
 
 <hr />
 <h4>评论:</h4>
@@ -29,3 +34,11 @@ function onEnd()
 {% else %}
     <p>请登录 <a href="{{ 'account'|page }}">登录</a> 评论!</p>
 {% endif %}
+
+{% put scripts %}
+
+<script>
+prettyPrint()
+</script>
+
+{% endput %}

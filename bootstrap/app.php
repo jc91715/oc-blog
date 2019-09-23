@@ -1,5 +1,5 @@
 <?php
-
+define('OCTOBER_START', microtime(true));
 /*
 |--------------------------------------------------------------------------
 | Create The Application

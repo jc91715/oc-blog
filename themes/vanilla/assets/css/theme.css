@@ -462,3 +462,25 @@
 body {
   padding-top: 70px;
 }
+#layout-content > div > div.content img{
+    width:100%!important;
+    }
+#content123 img {
+    max-width:100%;
+}
+
+ #editor1 { 
+        /* position: relative; */
+       width:100%;
+       height:300px;
+       overfllow:scroll!imporatnt;
+    }
+ #editor2 { 
+    position: absolute;
+    width:100%;
+       height:600px;
+}
+pre.prettyprint {
+
+    padding: 10px!important;
+}

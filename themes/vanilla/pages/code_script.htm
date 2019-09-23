@@ -1,0 +1,81 @@
+title = "代码片段"
+url = "/code-script/:id"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use RV\PhpConsole\Models\Script;
+
+function onStart(){
+    $id = $this->param('id');
+    $script= Script::findOrFail($id);
+    $this['script']=$script;
+    $this->page->title=$script->title;
+   
+    
+}
+?>
+==
+{% put styles%}
+<style>
+.script-box img{
+    max-width:100%;
+    display:block;
+    margin:auto;
+    }
+ 
+
+</style>
+{% endput %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 script-box" style="padding-bottom:50px;">
+         
+       
+           
+             <h1>{{script.title}} {% if script.if_run%} 
+             <!-- <p data-control="flash-message" data-interval="3" class="success">
+               该代码可通过刷新实时运行
+                         </p> -->
+            <span class="label label-success">可刷新运行</span>
+            <a href="" class="btn btn-success">刷新</a>
+            {% endif %}</h1>
+           
+             <p>{{script.description}}</p>
+               <div id="js">
+                       
+               </div>
+              <h3>代码:</h3>
+              
+              <div style="max-height:500px;overflow-y:auto" >
+                    <pre class="prettyprint"><code class="prettyprint">{{script.code}}</code></pre>
+              </div>
+               <h3>输出:</h3>
+              
+              {% if script.type=='js'%}
+                   <pre class="prettyprint"><code class="prettyprint" id="result" ></code></pre>
+                    
+                        <div id="canvas">
+                       
+                       </div>
+                   {% put scripts%}
+                     
+                        {{script.getJsRunResult()|raw}}
+                    {% endput %}
+               {% else %}
+                        {{script.getPhpRunResult()|raw}}
+               {% endif %}
+             
+        </div>
+    </div>
+</div>
+ 
+              
+{% put scripts%}
+<script>
+prettyPrint()
+ 
+
+</script>
+{% endput %}

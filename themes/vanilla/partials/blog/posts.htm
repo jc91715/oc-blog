@@ -1,38 +1,22 @@
+==
 {% set posts = blogPosts.posts %}
 
 <div class="post-list">
     {% for post in posts %}
-        <div class="media">
-
-            <div class="media-left">
-                <a href="{{ post.url }}">
-                    {% if post.featured_images.count > 0 %}
-                        <img class="media-object" src="{{ post.featured_images.first.getThumb(100, 'auto') }}" />
-                    {% else %}
-                        <img class="media-object" src="http://placehold.it/100x100" />
-                    {% endif %}
-                </a>
-            </div>
-
-            <div class="media-body">
-                <h4 class="media-heading">
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                </h4>
-                <p class="info">
+    
+    <div class="jumbotron">
+      <h3>{{post.title}}</h1>
+      <p class="info" style="font-size:16px;">
                     发布{% if post.categories.count %}在 {% endif %}
                     {% for category in post.categories %}
                         <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
-                    {{ post.published_at.diffForHumans }}
+                    {{ post.published_at.diffForHumans }}，更新于{{ post.updated_at.diffForHumans }}
                 </p>
-
-                {% if post.excerpt %}
-                    <p class="excerpt">{{ post.excerpt }}</p>
-                {% else %}
-                    <div class="content">{{ post.content_html|raw }}</div>
-                {% endif %}
-            </div>
-        </div>
+      <p>{{post.excerpt}}</p>
+      <p><a class="btn btn-primary btn-lg" href="{{ post.url }}" role="button">Learn more</a></p>
+    </div>
+        
     {% else %}
         <div class="no-data">
             <p>{{ noPostsMessage }}</p>

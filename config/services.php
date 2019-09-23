@@ -33,5 +33,10 @@ return [
         'model'  => 'User',
         'secret' => '',
     ],
+'cas'    => [
+    'host'    => env('CAS_HOST'),
+    'port'    => intval(env('CAS_PORT', 443)),
+    'context' => env('CAS_CONTEXT', 'cas'),
+],
 
 ];

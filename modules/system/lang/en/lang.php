@@ -9,6 +9,7 @@ return [
         'ar' => 'العربية',
         'be' => 'Беларуская',
         'bg' => 'Български',
+        'ca' => 'Català',
         'cs' => 'Čeština',
         'da' => 'Dansk',
         'en' => 'English (United States)',
@@ -32,7 +33,7 @@ return [
         'lv' => 'Latviešu',
         'nb-no' => 'Norsk (Bokmål)',
         'nl' => 'Nederlands',
-        'pl' => 'Polskie',
+        'pl' => 'Polski',
         'pt-br' => 'Português (Brasil)',
         'pt-pt' => 'Português (Portugal)',
         'ro' => 'Română',
@@ -43,7 +44,8 @@ return [
         'tr' => 'Türkçe',
         'uk' => 'Українська мова',
         'zh-cn' => '简体中文',
-        'zh-tw' => '繁體中文'
+        'zh-tw' => '繁體中文',
+        'vn' => 'Tiếng việt'
     ],
     'directory' => [
         'create_fail' => 'Cannot create directory: :name'
@@ -109,6 +111,7 @@ return [
         'plugin_label'  => 'Plugin',
         'unknown_plugin' => 'Plugin has been removed from the file system.',
         'select_label' => 'Select Action...',
+        'bulk_actions_label' => 'Bulk actions',
         'check_yes' => 'Yes',
         'check_no' => 'No',
         'unfrozen' => 'Updates Enabled',
@@ -129,7 +132,7 @@ return [
         'unfreeze_success' => 'Successfully enabled updates for the selected plugins.',
         'enable_success' => 'Successfully enabled the selected plugins.',
         'disable_success' => 'Successfully disabled the selected plugins.',
-        'refresh_confirm' => 'Are you sure you want to reset the selected plugins? This will reset each plugin\'s data, restoring it to the intial install state.',
+        'refresh_confirm' => 'Are you sure you want to reset the selected plugins? This will reset each plugin\'s data, restoring it to the initial install state.',
         'refresh_success' => 'Successfully reset the selected plugins.',
         'remove_confirm' => 'Are you sure you want to remove the selected plugins? This will remove all associated data as well.',
         'remove_success' => 'Successfully removed the selected plugins.',
@@ -235,7 +238,9 @@ return [
         'deleting' => 'Deleting Template...',
         'deleting_layout' => 'Deleting Layout...',
         'sending' => 'Sending test message...',
-        'return' => 'Return to template list'
+        'return' => 'Return to template list',
+        'options' => 'Options',
+        'disable_auto_inline_css' => 'Disable automatic inline CSS'
     ],
     'mail_brand' => [
         'menu_label' => 'Mail branding',
@@ -312,11 +317,14 @@ return [
         'plugin_author' => 'Author',
         'plugin_not_found' => 'Plugin not found',
         'core_current_build' => 'Current build',
+        'core_view_changelog' => 'View Changelog',
         'core_build' => 'Build :build',
         'core_build_help' => 'Latest build is available.',
         'core_downloading' => 'Downloading application files',
         'core_extracting' => 'Unpacking application files',
         'core_set_build' => 'Setting build number',
+        'changelog' => 'Changelog',
+        'changelog_view_details' => 'View details',
         'plugins' => 'Plugins',
         'themes' => 'Themes',
         'disabled' => 'Disabled',
@@ -421,9 +429,11 @@ return [
         'manage_mail_templates' => 'Manage mail templates',
         'manage_mail_settings' => 'Manage mail settings',
         'manage_other_administrators' => 'Manage other administrators',
+        'impersonate_users' => 'Impersonate users',
         'manage_preferences' => 'Manage backend preferences',
         'manage_editor' => 'Manage code editor preferences',
         'view_the_dashboard' => 'View the dashboard',
+        'manage_default_dashboard' => 'Manage the default dashboard',
         'manage_branding' => 'Customize the back-end'
     ],
     'log' => [
@@ -440,5 +450,15 @@ return [
     'media' => [
         'invalid_path' => "Invalid file path specified: ':path'.",
         'folder_size_items' => 'item(s)',
+    ],
+    'page' => [
+        'custom_error' => [
+            'label' => 'Page error',
+            'help' => "We're sorry, but something went wrong and the page cannot be displayed."
+        ],
+    ],
+    'pagination' => [
+        'previous' => 'Previous',
+        'next' => 'Next',
     ],
 ];

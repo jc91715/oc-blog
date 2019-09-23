@@ -1,0 +1,19 @@
+title = "translate"
+url = "/:class_type/:slug/translate/:type?"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "sso"
+
+[Translate]
+==
+{% component 'Translate' %}
+{% put scripts%}
+<script>
+prettyPrint()
+ 
+
+</script>
+{% endput %}

@@ -1,0 +1,31 @@
+title = "技术文档"
+url = "/docs/:doc_id/chapters/:chapter_id?"
+layout = "default"
+is_hidden = 0
+
+[BookList]
+doc_id = "{{ :doc_id }}"
+chapter_id = "{{ :chapter_id }}"
+translatePage = "translate"
+sectionsPage = "sections"
+==
+<?php
+function onEnd()
+{
+    
+    if($this->page->components['BookList']->chapter()){
+         $this->page->title = $this->page->components['BookList']->chapter()->title;
+    }
+   
+}
+?>
+==
+{% component 'BookList'%}
+
+{% put scripts%}
+<script>
+prettyPrint()
+ 
+
+</script>
+{% endput %}

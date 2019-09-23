@@ -1,0 +1,71 @@
+==
+<nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ 'home'|page }}">jc91715`s Blog</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-main-collapse">
+                        <ul class="nav navbar-nav">
+                             <li class="separator hidden-xs"></li>
+                            <li class="{% if this.page.id == 'blog' %}active{% endif %}"><a href="{{ 'blog'|page }}">文章</a></li>
+                            <li class="{% if (this.page.id == 'books' or this.page.id == 'doc')  %}active{% endif %}"><a href="{{ 'books'|page }}">中文文档</a></li>
+                             <li class="{% if this.page.id == 'code_scripts' or  this.page.id == 'code_script' %}active{% endif %}"><a href="{{ 'code_scripts'|page }}">代码片段</a></li>
+                            <li class="{% if this.page.id == 'music' %}active{% endif %}"><a href="{{ 'music'|page }}">音乐</a></li>
+                            
+                             <li class="{% if this.page.id == 'xcx' %}active{% endif %}"><a href="{{ 'xcx'|page }}">小程序</a></li>
+                             <!-- <li class="{% if this.page.id == 'xcx' %}active{% endif %}"><a href="{{ 'find_working'|page }}">求职</a></li>-->
+                             <!-- <li class="{% if this.page.id == 'xcx' %}active{% endif %}"><a href="http://wechat-scan-login.jc91715.top/">微信扫码登陆</a></li> -->
+                            <!-- <li ><a href="https://simple-mvc.jc91715.top/index/about" target="_blank">mvc</a></li> -->
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if user %}
+                            <li>
+                                <a href="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dLabel">
+                                    {{user.username}}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'account'|page }}">个人中心</a></li>
+                                    <li><a data-request="onLogout" data-request-data="redirect: '/'">退出</a></li>
+                                    
+                                </ul>
+                            </li>
+
+                            {% else %}
+                            <li class="{% if this.page.id == 'sso' %}active{% endif %}"><a href="{{ 'sso'|page }}">sso登录</a></li>
+                            <li class="{% if this.page.id == 'sso' %}active{% endif %}"><a href="{{ 'account'|page }}">登录/注册</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Nav -->
+<!-- <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="separator hidden-xs"></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
+                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
+                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+ -->

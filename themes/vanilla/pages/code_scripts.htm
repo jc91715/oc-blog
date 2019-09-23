@@ -1,0 +1,21 @@
+title = "代码片段列表"
+url = "/code-scripts"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use RV\PhpConsole\Models\Script;
+
+function onStart(){
+    $this['scripts']=Script::latest('publish_at')->latest('id')->get();
+    $this->page->title='代码片段-有意思的代码片段';
+}
+?>
+==
+{% for script in scripts %}
+<div class="jumbotron">
+  <h1>{{script.title}}</h1>
+  <p>{{script.description}}</p>
+  <p><a class="btn btn-primary btn-lg" href="/code-script/{{script.id}}" role="button">Learn more</a></p>
+</div>
+{% endfor %}

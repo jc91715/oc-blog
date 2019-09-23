@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('debug',true),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'key' => 'Mj4JPi8QlsoyndyROeQMTUUc4jObRKHn',
+    'key' => 'QtLBA2H4OLuWyxGqjqbIS6pBr02069tP',
 
     'cipher' => 'AES-256-CBC',
 
